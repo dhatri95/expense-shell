@@ -1,8 +1,10 @@
 #!/bin/bash
 
 source ./common.sh
+access_check
 
-read -p "Please enter the DB password" $Password
+echo "Please enter the DB account password"
+read -s Password
 
 dnf module disable nodejs -y &>>$log
 validation $? "Disabling of Nodejs version 18"
