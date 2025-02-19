@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./common.sh
+access_check
 
 echo "Please enter DB password"
 read -s Password
