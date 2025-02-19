@@ -2,6 +2,8 @@
 
 source ./common.sh
 
+access_check
+
 dnf install nginx -y &>>$log
 validation $? "Installation of Nginx"
 
