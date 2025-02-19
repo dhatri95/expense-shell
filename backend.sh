@@ -23,15 +23,16 @@ if [ $? -ne 0 ]
         echo "Expense user is already available"
 fi
 
+rm -rf /app/
 
-mkdir /app &>>$log
+mkdir /app/ &>>$log
 validation $? "app directory creation"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$log
 validation $? "Code Download from internet"
 
 cd /app &>>$log
-rm -rf /app/
+validation $? "Moving inside app directory"
 
 unzip /tmp/backend.zip &>>$log
 validation $? "Unzipping the source code"
